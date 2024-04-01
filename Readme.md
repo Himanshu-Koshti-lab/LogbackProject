@@ -1,4 +1,3 @@
-
 **Add Dependency of Logback.**
 
 ```xml
@@ -14,7 +13,7 @@
 		</dependency>
 ```
 
-Then add logback.xml file to config the way of logging and log file creation. 
+Then add logback.xml file to config the way of logging and log file creation.
 
 ```xml
 <configuration>
@@ -31,6 +30,7 @@ Then add logback.xml file to config the way of logging and log file creation.
 ```
 
 # Documentation
+
     https://logback.qos.ch/manual/index.html
 
 ## Add Actuator for fetching information about application and its internal memory usage.
@@ -44,28 +44,29 @@ Then add logback.xml file to config the way of logging and log file creation.
 
 in application.properties you have to add manually expose endpoints.
 
-    By Default it open 3 endpoints
+    By Default it open 3 endpoint
 
 ```json
 {
   "_links": {
-     "self": {
-          "href": "http://localhost:8080/actuator",
-          "templated": false
-          },
-     "health": {
-          "href": "http://localhost:8080/actuator/health",
-          "templated": false
-          },
-     "health-path": {
-          "href": "http://localhost:8080/actuator/health/{*path}",
-          "templated": true
-          }
-            }
+    "self": {
+      "href": "http://localhost:8080/actuator",
+      "templated": false
+    },
+    "health": {
+      "href": "http://localhost:8080/actuator/health",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:8080/actuator/health/{*path}",
+      "templated": true
+    }
+  }
 }
 ```
 
-To expose all endpoints except shutdown : 
+To expose all endpoints except shutdown :
+
 ```yml
 management.endpoints.web.exposure.include=*
 management.endpoints.web.exposure.exclude=beans
@@ -77,9 +78,10 @@ If you want shutdown endpoint need to add
 management.endpoint.shutdown.enabled=true
 ```
 
-# Prometheus Integration 
+# Prometheus Integration
 
-add dependency 
+add dependency
+
 ```xml
 		<dependency>
 			<groupId>io.micrometer</groupId>
