@@ -13,7 +13,7 @@
 		</dependency>
 ```
 
-Then add logback.xml file to config the way of logging and log file creation.
+Then add logback.xml file to config the way of logging and log file creation..
 
 ```xml
 <configuration>
